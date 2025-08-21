@@ -21,7 +21,7 @@ Defaults to `python calibrate.py` with mag_out.txt
 
 Example Usage:
     `python calibrate.py -f magnetometer_data.csv --plot`
-    `python calibrate.py -f mag_out.txt --json --save`
+    `python calibrate.py -f mag_out.txt --json --no-save`
     `python calibrate.py -f data.csv --apply --plot`
 
 4) get "Hard Iron Bias" and "Soft Iron bias" matrixes (and c++ according code)

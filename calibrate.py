@@ -8,7 +8,7 @@ perform calibration, apply existing calibrations, and visualize results.
 
 Usage:
     python calibrate.py -f magnetometer_data.csv --plot
-    python calibrate.py -f mag_out.txt --json --save
+    python calibrate.py -f mag_out.txt --json --no-save
     python calibrate.py -f data.csv --apply --plot
 
 Features:
@@ -376,8 +376,8 @@ Examples:
                        help='Apply existing calibration from JSON file instead of calibrating. Optionally specify the JSON file path.')
     parser.add_argument('--json', action='store_true',
                        help='Save calibration parameters as JSON file')
-    parser.add_argument('-s', '--save', action='store_true', default=True,
-                       help='Save calibrated data to file (default: True)')
+    parser.add_argument('--no-save', action='store_false', dest='save', default=True,
+                       help='Disable saving calibrated data to file (default: saves data)')
     parser.add_argument('--field', type=float, default=1000,
                        help='Expected magnetic field strength in microTesla (default: 1000)')
     parser.add_argument('--unit', choices=['microtesla', 'gauss'], default='microtesla',
