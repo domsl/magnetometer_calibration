@@ -12,17 +12,22 @@ perform calibration, apply existing calibrations, and visualize results.
 
 
 # Usage :
-1) output you raw data from sensor and name it mag_out.txt in format x,y,z (uT)
+1) output you raw data from sensor and name it `mag_out.txt` in format x,y,z (uT) or in a csv file
 
-2) change the "MField" value (line 42) in calibrate.py according to your sensor value (calculation available at begining of calibrate.py)
+2) optionally set the MField Value:
+get the Total Field for your location from here:
+http://www.ngdc.noaa.gov/geomag-web (tab Magnetic Field)
+ es. Total Field = 47,241.3 nT | my val :47'789.7
 
-3) run script
+and use `--field` flag
+
+4) run script
 Defaults to `python calibrate.py` with mag_out.txt
 
 Example Usage:
     `python calibrate.py -f magnetometer_data.csv --plot`
     `python calibrate.py -f mag_out.txt --json --save`
-    `python calibrate.py -f data.csv --apply --plot`
+    `python calibrate.py -f data.csv --apply already_calibrated_matrix.json --plot`
 
 4) get "Hard Iron Bias" and "Soft Iron bias" matrixes (and c++ according code)
 
