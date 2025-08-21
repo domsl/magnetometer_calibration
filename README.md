@@ -1,8 +1,14 @@
 # Magnetometer calibration
 
-Ellipsoid fitting using python numpy to calibrate magnetometers
+Ellipsoid fitting using python numpy to calibrate magnetometers:
 
-![alt text](https://github.com/nliaudat/magnetometer_calibration/blob/main/Figure_1.png "Output")
+This tool performs magnetometer calibration using ellipsoid fitting to correct for
+hard iron and soft iron distortions. It can read data from CSV or TXT files,
+perform calibration, apply existing calibrations, and visualize results.
+
+![alt text](Figure_1.png "Output")
+![alt text](Figure_2.png "New Output")
+
 
 
 # Usage :
@@ -10,7 +16,17 @@ Ellipsoid fitting using python numpy to calibrate magnetometers
 
 2) change the "MField" value (line 42) in calibrate.py according to your sensor value (calculation available at begining of calibrate.py)
 
-3) run script and get "Hard Iron Bias" and "Soft Iron bias" matrixes (and c++ according code)
+3) run script
+Defaults to `python calibrate.py` with mag_out.txt
+
+Example Usage:
+    `python calibrate.py -f magnetometer_data.csv --plot`
+    `python calibrate.py -f mag_out.txt --json --save`
+    `python calibrate.py -f data.csv --apply --plot`
+
+4) get "Hard Iron Bias" and "Soft Iron bias" matrixes (and c++ according code)
+
+
 
        // Taken from calibrate.py or magcal
         float hard_iron_bias_x =  41.45884154873271 ;
@@ -69,7 +85,7 @@ If you run [esphome](https://esphome.io), a [sample code is included](https://gi
 If you want a sample or a working demo, look at https://github.com/nliaudat/weatherstation
 
 # Requirements : 
-calibrate.py requires numpy,scipy and optional matplotlib to plot the graph
+calibrate.py requires numpy,scipy, pandas and optional matplotlib to plot the graph
      
 # Thanks : 
 [John zhang12300](https://github.com/zhang12300) for issuing the bug
