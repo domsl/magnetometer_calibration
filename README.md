@@ -21,7 +21,7 @@ http://www.ngdc.noaa.gov/geomag-web (tab Magnetic Field)
 
 and use `--field` flag
 
-4) run script
+3) run script
 Defaults to `python calibrate.py` with mag_out.txt
 
 Example Usage:
